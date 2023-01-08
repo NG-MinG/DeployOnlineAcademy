@@ -503,7 +503,7 @@ export const editCourseDescription = catchAsync(async (req, res) => {
                 }
                 const newCourse = await Course.create({
                     name: req.body.course_title,
-                    img: `/${req.file.path.replace('public\\', '').replaceAll('\\', '/')}`,
+                    img: `/${req.file.path.replace('public/', '').replaceAll('/', '/')}`,
                     details: req.body.full_description,
                     slug: `/course/${slugify(req.body.course_title, { lower: true, locale: "vi", strict: true })}`,
                     description: req.body.short_description,
@@ -574,7 +574,7 @@ export const editCourseDescription = catchAsync(async (req, res) => {
 
                     await Course.findByIdAndUpdate(req.query.course, {
                         name: req.body.course_title,
-                        img: (req.file && req.file.path) ? req.file.path.replace('public\\', '/').replaceAll('\\', '/') : thisCourse.img,
+                        img: (req.file && req.file.path) ? req.file.path.replace('public/', '/').replaceAll('/', '/') : thisCourse.img,
                         details: req.body.full_description,
                         description: req.body.short_description,
                         currency: req.body.price_currency,
@@ -843,7 +843,7 @@ export const editCourseContent = catchAsync(async (req, res, next) => {
                         }
                     })
                     if (req.body.lecture_title != "") foundLesson.title = req.body.lecture_title;
-                    foundLesson.video = (req.file && req.file.path) ? `/${req.file.path.replace('public\\', '').replaceAll('\\', '/')}` : foundLesson.video;
+                    foundLesson.video = (req.file && req.file.path) ? `/${req.file.path.replace('public/', '').replaceAll('/', '/')}` : foundLesson.video;
                     await thisCourseLectures.save();
                     return res.render('instructor/addCourseContent', {
                         layout: "instructor",
@@ -882,7 +882,7 @@ export const editCourseContent = catchAsync(async (req, res, next) => {
                         title: req.body.lecture_title,
                         resources: [],
                         url: `${course.slug}/learn/lecture/${lecture_slug}`,
-                        video: req.file && req.file.path ? `/${req.file.path.replace('public\\', '').replaceAll('\\', '/')}` : "",
+                        video: req.file && req.file.path ? `/${req.file.path.replace('public/', '').replaceAll('/', '/')}` : "",
                         preview: "",
                         _id: new mongoose.Types.ObjectId()
                     }
