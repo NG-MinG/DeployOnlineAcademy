@@ -32,15 +32,6 @@ import get_shopping_cart_total from "./middlewares/load_shopping_cart.mdw.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const liveReloadServer = livereload.createServer();
-liveReloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    liveReloadServer.refresh("/");
-  }, 10);
-});
-
-app.use(connectLiveReload());
-
 app.engine(
   ".hbs",
   handlebars.engine({
