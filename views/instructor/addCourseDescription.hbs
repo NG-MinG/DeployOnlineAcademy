@@ -119,26 +119,26 @@
     if ("{{message}}" == "successAdded")
     {
         alert("Your course was added successfully...");
-        window.location.replace("http://localhost:5000/instructor/add-course-description/?course={{course_id}}");
+        window.location.replace("/instructor/add-course-description/?course={{course_id}}");
     }
     else if ("{{message}}" == "successSaved")
     {
         alert("Your change was saved successfully...");
-        window.location.replace("http://localhost:5000/instructor/add-course-description/?course={{course_id}}");
+        window.location.replace("/instructor/add-course-description/?course={{course_id}}");
     }
     else if ("{{message}}" == "successDeleted")
     {
         alert("Your course was deleted successfully...");
-        window.location.replace("http://localhost:5000/instructor/add-course-description");
+        window.location.replace("/instructor/add-course-description");
     }
     else if ("{{message}}" == "Your file extension is not valid.")
     {
         alert("Your file extension is not valid.");
-        window.location.replace("http://localhost:5000/instructor/add-course-description/?course={{course_id}}");
+        window.location.replace("/instructor/add-course-description/?course={{course_id}}");
     }
     else if ("{{message}}" != "")  { // failed
         alert("{{message}}");
-        window.location.replace("http://localhost:5000/instructor/add-course-description");
+        window.location.replace("/instructor/add-course-description");
     }
   
     // display subcategory

@@ -14,7 +14,7 @@ export default function(passport) {
   passport.use(new FacebookStrategy({
     clientID: process.env.CLIENT_ID_FB,
     clientSecret: process.env.CLIENT_SECRET_FB ,  
-    callbackURL: "http://localhost:5000/auth/facebook/callback",
+    callbackURL: "/auth/facebook/callback",
     profileFields: ['id', 'emails', 'name']
   },
   async function(accessToken, refreshToken, profile, cb) {
@@ -39,7 +39,7 @@ export default function(passport) {
   passport.use(new GoogleStrategy({
     clientID:     process.env.CLIENT_ID_GOOGLE,
     clientSecret: process.env.CLIENT_SECRET_GOOGLE,
-    callbackURL: "http://localhost:5000/auth/google/callback"
+    callbackURL: "/auth/google/callback"
   },
   async function(accessToken, refreshToken, profile, cb) {
     if (profile.id) {
@@ -64,7 +64,7 @@ export default function(passport) {
 passport.use(new GitHubStrategy({
   clientID: process.env.CLIENT_ID_GITHUB,
   clientSecret: process.env.CLIENT_SECRET_GITHUB,
-  callbackURL: "http://localhost:5000/auth/github/callback"
+  callbackURL: "/auth/github/callback"
 },
 async function(accessToken, refreshToken, profile, cb) {
   if (profile.id) {

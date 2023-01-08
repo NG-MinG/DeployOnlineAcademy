@@ -34,12 +34,12 @@
   {
     setTimeout(() => {
       alert("Signed up successfully. Please log in to your account...");
-      window.location.replace("http://localhost:5000/account/login");
+      window.location.replace("/account/login");
     }, 1500);
   }
   else if (messageReceived === "reset-pwd")
   {
-    window.location.replace("http://localhost:5000/account/new-password");
+    window.location.replace("/account/new-password");
   }
    $('.back-btn').on('click', (e) => {
         e.preventDefault();

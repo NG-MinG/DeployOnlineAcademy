@@ -135,22 +135,22 @@
     // display message when user upload file
     if ("{{message}}" == "success") {
         alert("Your change was saved successfully...");
-        window.location.replace("http://localhost:5000/instructor/add-course-content/?course={{course_id}}&page={{page}}");
+        window.location.replace("/instructor/add-course-content/?course={{course_id}}&page={{page}}");
     }
     else if ("{{message}}" == "You need to add your course description first. Please try again!")
     {
         alert("{{message}}");
-        window.location.replace("http://localhost:5000/instructor/add-course-description");
+        window.location.replace("/instructor/add-course-description");
     }
     else if ("{{message}}" == "finish")
     {
         alert("Congratulations! You finally finished this course and you can update later whatever you want.");
-        window.location.replace("http://localhost:5000/instructor/add-course-content/?course={{course_id}}&page={{page}}");
+        window.location.replace("/instructor/add-course-content/?course={{course_id}}&page={{page}}");
     }
     // if failed
     else if ("{{message}}" != "success" && ("{{message}}" != "")) {
         alert("{{message}}");
-        window.location.replace("http://localhost:5000/instructor/add-course-content/?course={{course_id}}&page={{page}}");
+        window.location.replace("/instructor/add-course-content/?course={{course_id}}&page={{page}}");
     }
     // validate user input's field before submitting (add lesson form)
     $('.add-lesson-form').on('submit', (e) => {
