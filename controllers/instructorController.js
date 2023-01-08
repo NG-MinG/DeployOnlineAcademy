@@ -503,7 +503,7 @@ export const editCourseDescription = catchAsync(async (req, res) => {
                 }
                 const newCourse = await Course.create({
                     name: req.body.course_title,
-                    img: `/${req.file.path.replace('public/', '').replaceAll('/', '/')}`,
+                    img: `/${req.file.path.replace('public/', '/').replaceAll('/', '/')}`,
                     details: req.body.full_description,
                     slug: `/course/${slugify(req.body.course_title, { lower: true, locale: "vi", strict: true })}`,
                     description: req.body.short_description,
